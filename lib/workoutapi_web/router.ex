@@ -7,6 +7,8 @@ defmodule WorkoutapiWeb.Router do
 
   scope "/api", WorkoutapiWeb do
     pipe_through :api
+
+    get "/", IMCController, :index
   end
 
   # Enables LiveDashboard only for development
