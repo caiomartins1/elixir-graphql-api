@@ -11,6 +11,13 @@ defmodule WorkoutapiWeb.Router do
     get "/", IMCController, :index
   end
 
+  scope "/api" do
+    pipe_through :api
+
+    forward "/graphql", Absinthe.Plug, schema: Workoutapi.Schema
+    forward "/graphiql", Absinthe.Plug.GraphiQL, schema: Workoutapi.Schema
+  end
+
   # Enables LiveDashboard only for development
   #
   # If you want to use the LiveDashboard in production, you should put
