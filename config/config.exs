@@ -10,6 +10,10 @@ use Mix.Config
 config :workoutapi,
   ecto_repos: [Workoutapi.Repo]
 
+config :workoutapi, Workoutapi.Repo,
+  migration_primary_key: [type: :binary_id],
+  migration_foreign_key: [type: :binary_id]
+
 # Configures the endpoint
 config :workoutapi, WorkoutapiWeb.Endpoint,
   url: [host: "localhost"],
