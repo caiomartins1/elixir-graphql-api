@@ -1,5 +1,5 @@
 defmodule WorkoutapiWeb.IMCController do
-  use WorkoutapiWeb,:controller
+  use WorkoutapiWeb, :controller
   alias Workoutapi.IMC
 
   def index(conn, params) do

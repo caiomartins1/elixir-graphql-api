@@ -14,8 +14,8 @@ defmodule WorkoutapiWeb.Router do
   scope "/api" do
     pipe_through :api
 
-    forward "/graphql", Absinthe.Plug, schema: Workoutapi.Schema
-    forward "/graphiql", Absinthe.Plug.GraphiQL, schema: Workoutapi.Schema
+    forward "/graphql", Absinthe.Plug, schema: WorkoutapiWeb.Schema
+    forward "/graphiql", Absinthe.Plug.GraphiQL, schema: WorkoutapiWeb.Schema
   end
 
   # Enables LiveDashboard only for development
