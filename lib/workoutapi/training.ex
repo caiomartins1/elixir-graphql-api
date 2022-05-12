@@ -15,14 +15,13 @@ defmodule Workoutapi.Training do
 
     belongs_to :user, User
 
-    has_many :exercises, Excercise
+    has_many :exercises, Exercise
 
     timestamps()
   end
 
   def changeset(params) do
-    # same as %__MODULE__{}
-    %Workoutapi.User{}
+    %__MODULE__{}
     |> cast(params, @fields)
     |> validate_required(@fields)
     |> cast_assoc(:exercises)
