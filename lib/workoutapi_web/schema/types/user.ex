@@ -1,8 +1,6 @@
 defmodule WorkoutapiWeb.Schema.Types.User do
   use Absinthe.Schema.Notation
 
-  import_types WorkoutapiWeb.Schema.Types.Custom.UUID4
-
   @desc "Logic user representation"
   object :user do
     field :id, non_null(:uuid4)
